@@ -11,8 +11,8 @@ ROOT = Path(__file__).resolve().parent
 
 
 def load_data():
-    housing = pd.read_csv(ROOT / "datasets" / "Housing_Cleaned.csv", low_memory=False)
-    transport = pd.read_csv(ROOT / "datasets" / "Transportation_Cleaned.csv", low_memory=False)
+    housing = pd.read_csv(ROOT / "Datasets" / "Housing_Cleaned.csv", low_memory=False)
+    transport = pd.read_csv(ROOT / "Datasets" / "Transportation_Cleaned.csv", low_memory=False)
     housing["year"] = pd.to_datetime(housing["project_completion_date"], errors="coerce").dt.year
     transport["year"] = pd.to_datetime(transport["crash_date"], errors="coerce").dt.year
     housing["units"] = pd.to_numeric(housing["all_counted_units"], errors="coerce").fillna(0)
