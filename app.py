@@ -249,5 +249,7 @@ def generate_report(clicks, boroughs, years, types, outcomes):
     return f1, f2, rel, f"{borough_year.borough.nunique()} boroughs · {borough_year.year.nunique()} years · {int(borough_year.units.sum()):,} completed affordable units · {int(borough_year.crashes.sum()):,} recorded crashes"
 
 
+server = app.server
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
